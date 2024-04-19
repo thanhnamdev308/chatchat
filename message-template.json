@@ -1,0 +1,17 @@
+{
+    "0001": {
+        "id": "0001",
+        "owner": "Nam",
+        "content": "Hello World 2"
+    },
+    "0002": {
+        "id": "0002",
+        "owner": "Bob",
+        "content": "Hello World"
+    },
+    "0003": {
+        "id": "0003",
+        "owner": "Anna",
+        "content": "This is a test message"
+    }
+}
