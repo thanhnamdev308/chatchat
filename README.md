@@ -33,6 +33,7 @@ __What I did:__
     ```
 
 2. Use `async` and `await` to handle requests:
+- If there is no `async` and `await`, the `get` will continue executing without waiting for `getMessage()` to finish. Then in the response, you will get the `messages` as `Promise{<pending>}`.
     ```js
     MessageRouter.get('/message', async (req, res) => {
         console.log(`Get all messages`);
