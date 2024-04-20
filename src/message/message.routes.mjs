@@ -1,20 +1,27 @@
 import express from 'express';
+import { getOneMessage, getMessage, createMessage } from './message.controller.mjs'
 
 const MessageRouter = express.Router();
 
 // TODO: Declare API Endpoints for Message
 
 MessageRouter.get('/message', (req, res) => {
-  // Get all message logic
-  res.json({ message: 'Get all message' });
+    console.log(`Get all messages`);
+
+    res.json({ message: 'Get all messages' });
 });
 
 MessageRouter.get('/message/:id', (req, res) => {
-  // Get message by ID logic
-  const messageId = req.params.id;
-  res.json({ message: `Get message with ID: ${messageId}` });
+    const messageId = req.params.id;
+    console.log(`Get message with ID: ${messageId}`);
+
+    res.json({ message: `Get message with ID: ${messageId}` });
 });
 
-// Add more routes for message here...
+MessageRouter.post('/message', (req, res) => {
+    console.log(`Post message`);
+
+    res.json({ message: `Post message` });
+});
 
 export { MessageRouter };  // Export the router object
