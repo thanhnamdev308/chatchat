@@ -6,7 +6,7 @@ import { MessageRouter } from './message/message.routes.mjs';
 
 // Declare constants
 const app = express();
-const port = process.env.PORT || 4000;  // TODO: implement environment variables
+const port = process.env.PORT || 3000;  // TODO: implement environment variables
 
 
 // App use statements
@@ -15,7 +15,7 @@ app.use(cors());
 
 
 // Routers
-app.use("/api/v1/message", MessageRouter);
+app.use("/api/v1/", MessageRouter);
 
 
 // Middleware for parsing incoming data (optional)
@@ -27,7 +27,7 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/', (req, res) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
-    res.send('This is backend server for ChatChat.');
+    res.send('Nothing here.');
 });
 
 

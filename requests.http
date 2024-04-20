@@ -1,0 +1,16 @@
+### List all messages
+GET http://localhost:3000/api/v1/message
+
+
+### Create a new message
+POST http://localhost:3000/api/v1/message
+content-type: application/json
+
+{
+  "owner": "Marry",
+  "content": "Hi, nice to meet you all!"
+}
+
+
+### Get a particular message
+GET http://localhost:3000/api/v1/message/0002
