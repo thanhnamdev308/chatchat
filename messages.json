@@ -1,17 +1,32 @@
 {
-    "0001": {
-        "id": "0001",
+    "172": {
+        "id": 172,
+        "owner": "Marry",
+        "content": "Hi, nice to meet you all!"
+    },
+    "570": {
+        "id": 570,
+        "owner": "John",
+        "content": "Hi my name is John"
+    },
+    "622": {
+        "id": 622,
+        "owner": "Nam",
+        "content": "Hi everyone"
+    },
+    "0003": {
+        "id": 3,
         "owner": "ChatChat",
-        "content": "Hello World!"
+        "content": "Type your message and press enter, it will appear here."
     },
     "0002": {
-        "id": "0002",
+        "id": 2,
         "owner": "ChatChat",
         "content": "Welcome to my chat channel."
     },
-    "0003": {
-        "id": "0003",
+    "0001": {
+        "id": 3,
         "owner": "ChatChat",
-        "content": "Type your message and press enter, it will appear here."
+        "content": "Hello World!"
     }
 }

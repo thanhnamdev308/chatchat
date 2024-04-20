@@ -1,4 +1,3 @@
-// TODO: API handler for Message
 import { readFile, writeFile } from 'fs/promises';
 
 export const getOneMessage = async (id) => {
