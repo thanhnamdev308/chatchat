@@ -15,7 +15,7 @@ app.use(cors());
 
 
 // Routers
-app.use("/api/v1/", MessageRouter);
+app.use("/api/v1/message", MessageRouter);
 
 
 // Middleware for parsing incoming data (optional)
