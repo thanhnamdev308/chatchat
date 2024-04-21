@@ -1,17 +1,17 @@
 {
-    "0001": {
-        "id": "0001",
-        "owner": "Nam",
-        "content": "Hello World 2"
+    "0003": {
+        "id": 3,
+        "owner": "ChatChat",
+        "content": "Type your message and press enter, it will appear here."
     },
     "0002": {
-        "id": "0002",
-        "owner": "Bob",
-        "content": "Hello World"
+        "id": 2,
+        "owner": "ChatChat",
+        "content": "Welcome to my chat channel."
     },
-    "0003": {
-        "id": "0003",
-        "owner": "Anna",
-        "content": "This is a test message"
+    "0001": {
+        "id": 3,
+        "owner": "ChatChat",
+        "content": "Hello World!"
     }
 }
