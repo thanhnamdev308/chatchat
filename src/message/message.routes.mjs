@@ -12,7 +12,7 @@ MessageRouter.get('/', async (req, res) => {
 
     const messages = await getMessage();
 
-    res.json({ messages });
+    res.send(messages);
 });
 
 MessageRouter.get('/:id', async (req, res) => {
@@ -21,7 +21,7 @@ MessageRouter.get('/:id', async (req, res) => {
 
     const message = await getOneMessage(messageId);
 
-    console.log(`Message found: ${message}`);
+    console.log(`Message found: ${message.owner} - ${message.content}`);
 
     res.json({ message });
 });

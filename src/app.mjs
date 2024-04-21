@@ -18,9 +18,9 @@ app.use(cors());
 app.use("/api/v1/message", MessageRouter);
 
 
-// Middleware for parsing incoming data (optional)
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+// // Middleware for parsing incoming data (optional)
+// app.use(express.json());
+// app.use(express.urlencoded({ extended: true }));
 
 
 // Define routes (replace with your specific routes)

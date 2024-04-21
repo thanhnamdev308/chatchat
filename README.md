@@ -99,7 +99,101 @@ __What I did:__
         await writeFile('messages.json', JSON.stringify(messages));
     }
     ```
-4. Create a simple frontend to demonstrate the API (TODO)
+4. Create a simple frontend to demonstrate the API
+- The fronent will be a simple HTML:
+    ```html
+    <!-- index.html -->
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ChatChat</title>
+        <style>
+            .chat-window {
+                border: 1px solid #ddd;
+                padding: 10px;
+                height: 400px;
+                overflow-y: scroll;
+            }
+
+            .message {
+                margin-bottom: 10px;
+            }
+
+            .message .owner {
+                font-weight: bold;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>ChatChat Window</h1>
+        <div class="chat-window" id="chat-window"></div>
+        <br>
+        <input type="text" id="name-input" placeholder="Your Name">
+        <input type="text" id="message-input" placeholder="Your Message">
+        <button id="send-button">Send</button>
+
+        <script>
+            // Script to handle API calls...
+        </script>
+    </body>
+
+    </html>
+    ```
+- In the script section, use `fetch()` syntax to make API calls:
+    ```html
+        <script>
+            const baseURL = "http://localhost:3000";
+            const chatWindow = document.getElementById('chat-window');
+            const nameInput = document.getElementById('name-input');
+            const messageInput = document.getElementById('message-input');
+            const sendButton = document.getElementById('send-button');
+
+            // Function to display a message in the chat window
+            function displayMessage(message) {
+                const messageElement = document.createElement('div');
+                messageElement.classList.add('message');
+                messageElement.innerHTML = `<span class="owner">${message.owner}:</span> ${message.content}`;
+                chatWindow.appendChild(messageElement);
+
+                // Scroll to the bottom of the chat window after adding a message
+                chatWindow.scrollTop = chatWindow.scrollHeight;
+            }
+
+            // Fetch initial messages on page load
+            fetch(`${baseURL}/api/v1/message`)
+                .then(response => response.json())
+                .then(messages => {
+                    const reversedMessages = Object.entries(messages).reverse();
+                    for (const [, message] of reversedMessages) {
+                        displayMessage(message);
+                    }
+                });
+
+            // Send message on button click
+            sendButton.addEventListener('click', () => {
+                const name = nameInput.value.trim();
+                const message = messageInput.value.trim();
+
+                if (!message) {
+                    return;  // Do nothing if message is empty
+                }
+
+                // Simulate sending message to server
+                fetch(`${baseURL}/api/v1/message`, {
+                    method: 'POST',
+                    body: JSON.stringify({ owner: name, content: message })
+                })
+                    .then(() => {
+                        messageInput.value = '';   // Clear message input after sending
+                        displayMessage({ owner: name, content: message });
+                    });
+            });
+        </script>
+    ```
 
 ## Part 2: Implement User Module and work with MongoDB
 
