@@ -7,26 +7,26 @@ MessageRouter.use(bodyParser.json());
 
 // TODO: Declare API Endpoints for Message
 
-MessageRouter.get('/message', async (req, res) => {
+MessageRouter.get('/', async (req, res) => {
     console.log(`Get all messages`);
 
     const messages = await getMessage();
 
-    res.json({ messages });
+    res.send(messages);
 });
 
-MessageRouter.get('/message/:id', async (req, res) => {
+MessageRouter.get('/:id', async (req, res) => {
     const messageId = req.params.id;
     console.log(`Get message with ID: ${messageId}`);
 
     const message = await getOneMessage(messageId);
 
-    console.log(`Message found: ${message}`);
+    console.log(`Message found: ${message.owner} - ${message.content}`);
 
     res.json({ message });
 });
 
-MessageRouter.post('/message', async (req, res) => {
+MessageRouter.post('/', async (req, res) => {
     console.log(`Post message`);
 
     const owner = req.body.owner;
