@@ -27,7 +27,7 @@ MessageRouter.get('/:id', async (req, res) => {
 });
 
 MessageRouter.post('/', async (req, res) => {
-    console.log(`Request body: ${req.body}`);
+    console.log("Request Body:", req.body);
 
     const owner = req.body.owner;
     const content = req.body.content;
