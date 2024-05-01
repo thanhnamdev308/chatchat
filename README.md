@@ -185,6 +185,9 @@ __What I did:__
                 // Simulate sending message to server
                 fetch(`${baseURL}/api/v1/message`, {
                     method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    }
                     body: JSON.stringify({ owner: name, content: message })
                 })
                     .then(() => {
